@@ -206,10 +206,3 @@ vsearch --usearch_global 5_vsearch/rename_fasta/combine/combine.fasta  \
 makeblastdb -in database/database.fasta -dbtype nucl -out database/database
 
 blastn -query 5_vsearch/rename_fasta/combine/nonchimeras_combine_rename.fasta -db database/database -evalue '0.001' -out result_blastn.txt -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore' -num_threads 10 -strand both -dust yes -max_target_seqs 2 -perc_identity 90 -qcov_hsp_perc 90
-
-
-# building taxon_table
-# Get the current working directory
-WD=$(pwd)
-# Run R script with the working directory argument
-Rscript -e "setwd('$WD'); source('script_r_taxon_table.R')"

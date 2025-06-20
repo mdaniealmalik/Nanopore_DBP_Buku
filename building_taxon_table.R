@@ -63,8 +63,6 @@ unique(taxon_table_clean_edt$Species)
 
 colnames(taxon_table_clean)[1] <- "OTU"
 
-colnames(otu_table)[1] <- "OTU"
-
 # combine with otu table to assign non-identify OTU as unassigned
 otu_table <- read.delim("otu_table.tsv")
 
